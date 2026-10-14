@@ -23,7 +23,8 @@ export default function App() {
     try {
       // EXPLOIT: We pass the target URL as an encoded query parameter.
       // School firewalls monitoring your network traffic only see you visiting your own Vercel app.
-      const proxyApiUrl = `/api/proxy?url=${encodeURIComponent(target)}`;
+      const proxyApiUrl = `/API/proxy.js?url=${encodeURIComponent(target)}`;
+
       
       const response = await fetch(proxyApiUrl);
       if (!response.ok) throw new Error('Proxy server rejected or dropped connection');
